@@ -12,5 +12,12 @@
     <color name="list">#CBCBCC</color>
     <color name="plugins">#D3D3D3</color>
     <color name="pluginsDark">#3F3F3F</color>
+    <color name="red">#FE1D58</color>
+    <color name="itemcolors">#0D0433</color>
+    <color name="bottom">#1E1E47</color>
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="transparent">#00000000</color>
+    <color name="gray">#99FFFFFF</color>
+    <color name="boderColor">#DDDD</color>
 
 </resources>
