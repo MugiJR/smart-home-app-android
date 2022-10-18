@@ -1,8 +1,5 @@
-<!--<resources>-->
-<!--    <string name="app_name">SmartHomeApplication</string>-->
-<!--</resources>-->
 <resources>
-    <string name="app_name">SmartHomeApplication</string>
+    <string name="app_name">Smart Home</string>
     <string name="bathroom">Bathroom</string>
     <string name="light">Light</string>
     <string name="devices">Devices</string>
