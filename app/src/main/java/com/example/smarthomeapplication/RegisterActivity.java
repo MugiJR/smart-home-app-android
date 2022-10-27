@@ -14,12 +14,13 @@ import com.google.android.gms.tasks.Task;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 public class RegisterActivity extends AppCompatActivity {
-    EditText emailInput, passwordInput, passwordConfirmationInput;
+    TextInputLayout emailInput, passwordInput, passwordConfirmationInput;
     Button registerButton;
 
     public static final String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
@@ -32,7 +33,6 @@ public class RegisterActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
-        // TODO: Names in here have to match fields names on the layout
         emailInput = findViewById(R.id.registerEmail);
         passwordInput = findViewById(R.id.registerPassword);
         passwordConfirmationInput = findViewById(R.id.registerPasswordConfirmation);
@@ -51,9 +51,9 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
     private void performAuthentication() {
-        String email = emailInput.getText().toString();
-        String password = passwordInput.getText().toString();
-        String passwordConfirmation = passwordConfirmationInput.getText().toString();
+        String email = emailInput.getEditText().getText().toString();
+        String password = String.valueOf(passwordInput.getEditText().getText());
+        String passwordConfirmation = String.valueOf(passwordConfirmationInput.getEditText().getText());
 
         if(!email.matches(emailPattern)) {
             emailInput.setError("Enter a Correct Email Form!");
@@ -95,8 +95,7 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
     private void redirectToNextActivity() {
-        // TODO: change HeatingActivity to the HomeActivity
-        Intent intent = new Intent(RegisterActivity.this, HeatingActivity.class);
+        Intent intent = new Intent(RegisterActivity.this, MainActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
     }
