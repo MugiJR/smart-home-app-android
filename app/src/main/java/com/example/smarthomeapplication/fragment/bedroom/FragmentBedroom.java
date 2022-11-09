@@ -1,6 +1,4 @@
-package com.example.smarthomeapplication.fragment.Kitchen;
-
-
+package com.example.smarthomeapplication.fragment.bedroom;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,27 +11,20 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-//import com.google.firebase.auth.FirebaseAuth;
-//import com.google.firebase.database.DatabaseReference;
-//import com.google.firebase.database.FirebaseDatabase;
 
 import com.example.smarthomeapplication.MainActivity;
 import com.example.smarthomeapplication.R;
-import com.example.smarthomeapplication.fragment.bedroom.FragmentBedroomHeating;
-import com.example.smarthomeapplication.fragment.bedroom.FragmentBedroomLight;
-import com.example.smarthomeapplication.fragment.bedroom.FragmentBedroomPlugins;
-import com.example.smarthomeapplication.fragment.bedroom.FragmentBedroomShades;
-import com.example.smarthomeapplication.fragment.bedroom.FragmentBedroomWindowsAndDoors;
 
-public class FragmentKitchen extends Fragment implements View.OnClickListener {
-    private ImageView mBack,mLight,mPlugIn,mHeating,mWindows,mShades;
+
+public class FragmentBedroom extends Fragment implements View.OnClickListener {
+    private ImageView mBack, mLight,mPlugIn,mHeating,mWindows,mShades;
 
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
 
-        View view = inflater.inflate(R.layout.activity_kitchen, container, false);
+        View view = inflater.inflate(R.layout.activity_bedroom, container, false);
         initView(view);
         return view;
 
@@ -65,6 +56,7 @@ public class FragmentKitchen extends Fragment implements View.OnClickListener {
     public void onClick(View view) {
         switch (view.getId())
         {
+
             case R.id.back_arrow:
                 Intent intent = new Intent(this.getActivity(), MainActivity.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
@@ -72,29 +64,29 @@ public class FragmentKitchen extends Fragment implements View.OnClickListener {
                 break;
 
             case R.id.light:
-                showTopLevelFragment(new FragmentKitchenLight());
+                showTopLevelFragment(new FragmentBedroomLight());
                 break;
 
             case R.id.devices:
-                showTopLevelFragment(new FragmentKitchenPlugins());
+                showTopLevelFragment(new FragmentBedroomPlugins());
 
                 break;
 
 
             case R.id.heating:
 
-                showTopLevelFragment(new FragmentKitchenHeating());
+                showTopLevelFragment(new FragmentBedroomHeating());
 
                 break;
 
             case R.id.windowsAndDoors:
 
-                showTopLevelFragment(new FragmentKitchenWindowsAndDoors());
+                showTopLevelFragment(new FragmentBedroomWindowsAndDoors());
 
                 break;
             case R.id.shades:
 
-                showTopLevelFragment(new FragmentKitchenShades());
+                showTopLevelFragment(new FragmentBedroomShades());
 
                 break;
 

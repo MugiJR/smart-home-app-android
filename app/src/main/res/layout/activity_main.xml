@@ -195,7 +195,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Router"
+            android:text="@string/router"
             android:textStyle="bold"
             android:textColor="@color/white"
             android:textSize="30sp" />
@@ -219,7 +219,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Music"
+            android:text="@string/music"
             android:textStyle="bold"
             android:textColor="@color/white"
             android:textSize="30sp" />

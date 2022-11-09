@@ -11,8 +11,8 @@ import android.widget.ImageView;
 
 import com.example.smarthomeapplication.fragment.Bathroom.FragmentBathroom;
 import com.example.smarthomeapplication.fragment.Kitchen.FragmentKitchen;
-import com.example.smarthomeapplication.fragment.LivingRoom.FragmentLivingroom;
-import com.example.smarthomeapplication.fragment.bedroom.FragmentBedRoom;
+import com.example.smarthomeapplication.fragment.LivingRoom.FragmentLivingRoom;
+import com.example.smarthomeapplication.fragment.bedroom.FragmentBedroom;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity  implements View.OnClickListener  {
@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity  implements View.OnClickList
                 break;
 
             case (R.id.livingroom):
-               showTopLevelFragment(new FragmentLivingroom());
+               showTopLevelFragment(new FragmentLivingRoom());
 
                 break;
 
@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity  implements View.OnClickList
 
                 break;
             case R.id.bedroom:
-                MainActivity.this.showTopLevelFragment(new FragmentBedRoom());
+                MainActivity.this.showTopLevelFragment(new FragmentBedroom());
                 break;
         }
     }

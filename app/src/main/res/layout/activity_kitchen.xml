@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
+    android:id="@+id/fragment_kitchen"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <LinearLayout
@@ -43,7 +44,9 @@
             android:layout_gravity="center"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/image">
+            app:layout_constraintTop_toBottomOf="@+id/image"
+            tools:ignore="UseCompoundDrawables">
+
 
             <TextView
                 android:id="@+id/kitchenTitle"
@@ -72,15 +75,17 @@
             android:padding="15dp"
             android:orientation="vertical">
             <androidx.cardview.widget.CardView
-                android:id="@+id/light"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:cardCornerRadius="8dp"
                 android:layout_gravity="center_horizontal">
-                <LinearLayout
-                    android:layout_width="340dp"
+
+                <ImageView
+                    android:layout_width="match_parent"
                     android:layout_height="80dp"
-                    android:background="@drawable/light">
+                    android:background="@drawable/light"
+                    android:id="@+id/light"
+                    />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -90,19 +95,19 @@
                         android:textColor="@color/black"
                         android:textSize="25sp"
                         android:textStyle="bold" />
-                </LinearLayout>
+
             </androidx.cardview.widget.CardView>
             <androidx.cardview.widget.CardView
-                android:id="@+id/devices"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:cardCornerRadius="8dp"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="15dp">
-                <LinearLayout
-                    android:layout_width="340dp"
+                <ImageView
+                    android:layout_width="match_parent"
                     android:layout_height="80dp"
-                    android:background="@drawable/plugs">
+                    android:background="@drawable/plugs"
+                    android:id="@+id/devices"/>
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -112,20 +117,18 @@
                         android:textColor="@color/black"
                         android:textSize="25sp"
                         android:textStyle="bold" />
-                </LinearLayout>
             </androidx.cardview.widget.CardView>
             <androidx.cardview.widget.CardView
-                android:id="@+id/heating"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:cardCornerRadius="8dp"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="15dp">
-                <LinearLayout
-                    android:layout_width="340dp"
+                <ImageView
+                    android:layout_width="match_parent"
                     android:layout_height="80dp"
-                    android:background="@drawable/heater">
-
+                    android:background="@drawable/heater"
+                    android:id="@+id/heating"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -134,20 +137,18 @@
                         android:textColor="@color/black"
                         android:textSize="25sp"
                         android:textStyle="bold" />
-                </LinearLayout>
             </androidx.cardview.widget.CardView>
             <androidx.cardview.widget.CardView
-                android:id="@+id/windowsAndDoors"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:cardCornerRadius="8dp"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="15dp">
-                <LinearLayout
-                    android:layout_width="340dp"
+                <ImageView
+                    android:layout_width="match_parent"
                     android:layout_height="80dp"
-                    android:background="@drawable/kitchen_background">
-
+                    android:background="@drawable/windows_kitchen"
+                    android:id="@+id/windowsAndDoors"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -156,19 +157,18 @@
                         android:textColor="@color/black"
                         android:textSize="25sp"
                         android:textStyle="bold" />
-                </LinearLayout>
             </androidx.cardview.widget.CardView>
             <androidx.cardview.widget.CardView
-                android:id="@+id/shades"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:cardCornerRadius="8dp"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="15dp">
-                <LinearLayout
-                    android:layout_width="340dp"
+                <ImageView
+                    android:layout_width="match_parent"
                     android:layout_height="80dp"
-                    android:background="@drawable/shades_kitchen">
+                    android:background="@drawable/shades_kitchen"
+                    android:id="@+id/shades"/>
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -178,7 +178,6 @@
                         android:textColor="@color/black"
                         android:textSize="25sp"
                         android:textStyle="bold" />
-                </LinearLayout>
             </androidx.cardview.widget.CardView>
 
 

@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
+    android:id="@+id/fragment_bedroom"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <LinearLayout
@@ -30,7 +32,7 @@
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:layout_marginStart="10dp"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="5dp"
                     android:src="@drawable/left_arrow" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
@@ -45,8 +47,9 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/image">
 
+
             <TextView
-                android:id="@+id/bedroomTitle"
+                android:id="@+id/BedroomTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/bedroom"
@@ -58,7 +61,7 @@
                 android:layout_width="63dp"
                 android:layout_height="41dp"
                 android:src="@drawable/bedroom_icon"
-                app:layout_constraintStart_toEndOf="@+id/textView"/>
+                app:layout_constraintStart_toEndOf="@+id/textView" />
         </LinearLayout>
 
         <LinearLayout
@@ -72,113 +75,110 @@
             android:padding="15dp"
             android:orientation="vertical">
             <androidx.cardview.widget.CardView
-                android:id="@+id/light"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:cardCornerRadius="8dp"
                 android:layout_gravity="center_horizontal">
-                <LinearLayout
-                    android:layout_width="340dp"
-                    android:layout_height="80dp"
-                    android:background="@drawable/light">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="5dp"
-                        android:text="@string/light"
-                        android:textColor="@color/black"
-                        android:textSize="25sp"
-                        android:textStyle="bold" />
-                </LinearLayout>
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:background="@drawable/light"
+                    android:id="@+id/light"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:text="@string/light"
+                    android:textColor="@color/black"
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
+
             </androidx.cardview.widget.CardView>
             <androidx.cardview.widget.CardView
-                android:id="@+id/devices"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:cardCornerRadius="8dp"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="15dp">
-                <LinearLayout
-                    android:layout_width="340dp"
+                <ImageView
+                    android:id="@+id/devices"
+                    android:layout_width="match_parent"
                     android:layout_height="80dp"
-                    android:background="@drawable/plugs">
+                    android:background="@drawable/plugs" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="5dp"
-                        android:text="@string/devices"
-                        android:textColor="@color/black"
-                        android:textSize="25sp"
-                        android:textStyle="bold" />
-                </LinearLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:text="@string/devices"
+                    android:textColor="@color/black"
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
             </androidx.cardview.widget.CardView>
             <androidx.cardview.widget.CardView
-                android:id="@+id/heating"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:cardCornerRadius="8dp"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="15dp">
-                <LinearLayout
-                    android:layout_width="340dp"
+                <ImageView
+                    android:id="@+id/heating"
+                    android:layout_width="match_parent"
                     android:layout_height="80dp"
-                    android:background="@drawable/heater">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="5dp"
-                        android:text="@string/heating"
-                        android:textColor="@color/black"
-                        android:textSize="25sp"
-                        android:textStyle="bold" />
-                </LinearLayout>
+                    android:background="@drawable/heater"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:text="@string/heating"
+                    android:textColor="@color/black"
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
             </androidx.cardview.widget.CardView>
             <androidx.cardview.widget.CardView
-                android:id="@+id/windowsAndDoors"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:cardCornerRadius="8dp"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="15dp">
-                <LinearLayout
-                    android:layout_width="340dp"
+                <ImageView
+                    android:layout_width="match_parent"
                     android:layout_height="80dp"
-                    android:background="@drawable/windows_bedroom">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="5dp"
-                        android:text="@string/windows_and_doors"
-                        android:textColor="@color/black"
-                        android:textSize="25sp"
-                        android:textStyle="bold" />
-                </LinearLayout>
+                    android:background="@drawable/windows_bedroom"
+                    android:id="@+id/windowsAndDoors"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:text="@string/windows_and_doors"
+                    android:textColor="@color/black"
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
             </androidx.cardview.widget.CardView>
             <androidx.cardview.widget.CardView
-                android:id="@+id/shades"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:cardCornerRadius="8dp"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="15dp">
-                <LinearLayout
-                    android:layout_width="340dp"
+                <ImageView
+                    android:layout_width="match_parent"
                     android:layout_height="80dp"
-                    android:background="@drawable/shades_bedroom">
+                    android:background="@drawable/shades_bedroom"
+                    android:id="@+id/shades"/>
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="5dp"
-                        android:text="@string/shades"
-                        android:textColor="@color/black"
-                        android:textSize="25sp"
-                        android:textStyle="bold" />
-                </LinearLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:text="@string/shades"
+                    android:textColor="@color/black"
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
             </androidx.cardview.widget.CardView>
 
 
