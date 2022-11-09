@@ -30,7 +30,7 @@ public class IntroActivity extends AppCompatActivity implements View.OnClickList
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.next:
-                startActivity(new Intent(this,MainActivity.class));
+                startActivity(new Intent(this,RegisterActivity.class));
                 break;
         }
     }
