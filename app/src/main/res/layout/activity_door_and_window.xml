@@ -5,8 +5,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background"
-    tools:context=".DoorAndWindow">
+    android:background="@color/background">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -52,18 +51,16 @@
                 android:text="@string/window"
                 android:textSize="20sp" />
 
-            <androidx.appcompat.widget.SwitchCompat
+
+            <Switch
                 android:id="@+id/switchWindow"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="2"
                 android:layout_marginEnd="68dp"
-                android:textOff="@string/off"
-                android:textOn="@string/on"
-                android:thumb="@drawable/thumb"
                 android:layout_marginTop="10dp"
-                app:showText="true"
-                app:track="@drawable/track" />
+                android:paddingStart="10dp"
+                android:scrollbarSize="30dp" />
         </LinearLayout>
 
         <LinearLayout
@@ -81,18 +78,16 @@
                 android:text="@string/door"
                 android:textSize="20sp" />
 
-            <androidx.appcompat.widget.SwitchCompat
+
+            <Switch
                 android:id="@+id/switchDoor"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="2"
                 android:layout_marginEnd="68dp"
-                android:textOff="@string/off"
-                android:textOn="@string/on"
-                android:thumb="@drawable/thumb"
                 android:layout_marginTop="10dp"
-                app:showText="true"
-                app:track="@drawable/track" />
+                android:paddingStart="10dp"
+                android:scrollbarSize="30dp" />
         </LinearLayout>
 
     </LinearLayout>
