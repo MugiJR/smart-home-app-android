@@ -1,6 +1,7 @@
 package com.example.smarthomeapplication.fragment.Kitchen;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,12 +15,20 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.example.smarthomeapplication.R;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class FragmentKitchenShades extends Fragment implements View.OnClickListener {
 
     private SeekBar mSeekbar;
     private ImageView mBackArrow;
     private TextView mShadesText;
+    private DatabaseReference mRef, mRefShades;
+    private FirebaseDatabase db;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -33,6 +42,11 @@ public class FragmentKitchenShades extends Fragment implements View.OnClickListe
     }
 
     private void initView(View view) {
+        // DB instance
+        db = FirebaseDatabase.getInstance();
+        mRef = db.getReference("SmartHome").child(FirebaseAuth.getInstance().getUid()).child("Kitchen").child("ShadesIns");
+        mRefShades = db.getReference("SmartHome").child(FirebaseAuth.getInstance().getUid()).child("Kitchen")
+                .child("ShadesIns").child("Shades");
         mSeekbar = view.findViewById(R.id.seekBar_shades);
         mShadesText = view.findViewById(R.id.textView_shades);
         mBackArrow = view.findViewById(R.id.back_arrow_shades);
@@ -51,7 +65,29 @@ public class FragmentKitchenShades extends Fragment implements View.OnClickListe
 
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
+                mRef.child("Shades").setValue(seekBar.getProgress()).addOnSuccessListener(runnable -> {
+
+                });
                 Toast.makeText(getActivity(),"Shades has been set to "+ seekBar.getProgress()+ "%",Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        mRefShades.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                // for(DataSnapshot singleSnapshot : dataSnapshot.getChildren()){
+                Long user = dataSnapshot.getValue(Long.class);
+                if (!user.toString().isEmpty()) {
+                    int shadesLevel = user.intValue();
+                    mSeekbar.setProgress(shadesLevel);
+                    mShadesText.setText("" + shadesLevel + "%");
+                }
+            }
+
+
+            @Override
+            public void onCancelled(DatabaseError error) {
+                Log.e("TAG", "onCancelled", error.toException());
             }
         });
 
