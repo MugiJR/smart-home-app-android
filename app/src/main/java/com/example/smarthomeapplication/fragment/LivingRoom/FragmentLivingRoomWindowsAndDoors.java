@@ -2,6 +2,7 @@ package com.example.smarthomeapplication.fragment.LivingRoom;
 
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,11 +17,19 @@ import androidx.fragment.app.Fragment;
 import com.example.smarthomeapplication.R;
 import com.example.smarthomeapplication.fragment.Kitchen.FragmentKitchen;
 import com.example.smarthomeapplication.fragment.bedroom.FragmentBedroom;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class FragmentLivingRoomWindowsAndDoors extends Fragment implements View.OnClickListener {
 
     private Switch mSwitchWindow, mSwitchDoor;
     private ImageView mButtonBack;
+    private DatabaseReference mRef, mRefWindow, mRefDoor;
+    private FirebaseDatabase db;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -34,6 +43,14 @@ public class FragmentLivingRoomWindowsAndDoors extends Fragment implements View.
     }
 
     private void initView(View view) {
+        // DB instance
+        db = FirebaseDatabase.getInstance();
+        mRef = db.getReference("SmartHome").child(FirebaseAuth.getInstance().getUid()).child("LivingRoom").child("WinDoorIns");
+        mRefWindow = db.getReference("SmartHome").child(FirebaseAuth.getInstance().getUid()).child("LivingRoom")
+                .child("WinDoorIns").child("Window");
+        mRefDoor = db.getReference("SmartHome").child(FirebaseAuth.getInstance().getUid()).child("LivingRoom")
+                .child("WinDoorIns").child("Door");
+
         mButtonBack = view.findViewById(R.id.back_arrow_door_window);
         mSwitchWindow = view.findViewById(R.id.switchWindow);
         mSwitchDoor = view.findViewById(R.id.switchDoor);
@@ -42,16 +59,23 @@ public class FragmentLivingRoomWindowsAndDoors extends Fragment implements View.
 
 
         mSwitchWindow.setOnClickListener(view12 -> {
+            mRef.child("Window").setValue((mSwitchWindow.isChecked()) ? 1 : 0).addOnSuccessListener(runnable -> {
+
+            });
             if (mSwitchWindow.isChecked()) {
                 Toast.makeText(getActivity(),"Windows are opening...",Toast.LENGTH_SHORT).show();
             }
             else {
                 Toast.makeText(getActivity(),"Windows are closing...",Toast.LENGTH_SHORT).show();
             }
+
         });
 
 
         mSwitchDoor.setOnClickListener(view1 -> {
+            mRef.child("Door").setValue((mSwitchDoor.isChecked()) ? 1 : 0).addOnSuccessListener(runnable -> {
+
+            });
             if (mSwitchDoor.isChecked()) {
                 Toast.makeText(getActivity(),"Doors are opening...",Toast.LENGTH_SHORT).show();
             }
@@ -60,6 +84,41 @@ public class FragmentLivingRoomWindowsAndDoors extends Fragment implements View.
             }
         });
 
+        mRefWindow.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                Long user = dataSnapshot.getValue(Long.class);
+                if (user.toString().equals("1")) {
+                    mSwitchWindow.setChecked(true);
+                } else {
+                    mSwitchWindow.setChecked(false);
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                Log.e("TAG", "onCancelled", databaseError.toException());
+            }
+        });
+
+        mRefDoor.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                Long user = dataSnapshot.getValue(Long.class);
+                if (user.toString().equals("1")) {
+                    mSwitchDoor.setChecked(true);
+                } else {
+                    mSwitchDoor.setChecked(false);
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                Log.e("TAG", "onCancelled", databaseError.toException());
+            }
+        });
+
+
     }
 
     @Override
@@ -67,7 +126,7 @@ public class FragmentLivingRoomWindowsAndDoors extends Fragment implements View.
         switch (view.getId())
         {
             case R.id.back_arrow_door_window:
-                showTopLevelFragment(new FragmentKitchen());
+                showTopLevelFragment(new FragmentLivingRoom());
                 break;
 
 

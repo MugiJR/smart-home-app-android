@@ -2,6 +2,7 @@ package com.example.smarthomeapplication.fragment.Bathroom;
 
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,11 +17,19 @@ import androidx.appcompat.widget.SwitchCompat;
 import androidx.fragment.app.Fragment;
 
 import com.example.smarthomeapplication.R;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class FragmentBathroomWindowsAndDoors extends Fragment implements View.OnClickListener {
 
     private Switch mSwitchWindow, mSwitchDoor;
     private ImageView mButtonBack;
+    private DatabaseReference mRef, mRefWindow, mRefDoor;
+    private FirebaseDatabase db;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -34,6 +43,14 @@ public class FragmentBathroomWindowsAndDoors extends Fragment implements View.On
     }
 
     private void initView(View view) {
+        // DB instance
+        db = FirebaseDatabase.getInstance();
+        mRef = db.getReference("SmartHome").child(FirebaseAuth.getInstance().getUid()).child("Bathroom").child("WinDoorIns");
+        mRefWindow = db.getReference("SmartHome").child(FirebaseAuth.getInstance().getUid()).child("Bathroom")
+                .child("WinDoorIns").child("Window");
+        mRefDoor = db.getReference("SmartHome").child(FirebaseAuth.getInstance().getUid()).child("Bathroom")
+                .child("WinDoorIns").child("Door");
+
         mButtonBack = view.findViewById(R.id.back_arrow_door_window);
         mSwitchWindow = view.findViewById(R.id.switchWindow);
         mSwitchDoor = view.findViewById(R.id.switchDoor);
@@ -42,16 +59,23 @@ public class FragmentBathroomWindowsAndDoors extends Fragment implements View.On
 
 
         mSwitchWindow.setOnClickListener(view12 -> {
+            mRef.child("Window").setValue((mSwitchWindow.isChecked()) ? 1 : 0).addOnSuccessListener(runnable -> {
+
+            });
             if (mSwitchWindow.isChecked()) {
                 Toast.makeText(getActivity(),"Windows are opening...",Toast.LENGTH_SHORT).show();
             }
             else {
                 Toast.makeText(getActivity(),"Windows are closing...",Toast.LENGTH_SHORT).show();
             }
+
         });
 
 
         mSwitchDoor.setOnClickListener(view1 -> {
+            mRef.child("Door").setValue((mSwitchDoor.isChecked()) ? 1 : 0).addOnSuccessListener(runnable -> {
+
+            });
             if (mSwitchDoor.isChecked()) {
                 Toast.makeText(getActivity(),"Doors are opening...",Toast.LENGTH_SHORT).show();
             }
@@ -59,6 +83,41 @@ public class FragmentBathroomWindowsAndDoors extends Fragment implements View.On
                 Toast.makeText(getActivity(),"Doors are closing...",Toast.LENGTH_SHORT).show();
             }
         });
+
+        mRefWindow.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                Long user = dataSnapshot.getValue(Long.class);
+                if (user.toString().equals("1")) {
+                    mSwitchWindow.setChecked(true);
+                } else {
+                    mSwitchWindow.setChecked(false);
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                Log.e("TAG", "onCancelled", databaseError.toException());
+            }
+        });
+
+        mRefDoor.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                Long user = dataSnapshot.getValue(Long.class);
+                if (user.toString().equals("1")) {
+                    mSwitchDoor.setChecked(true);
+                } else {
+                    mSwitchDoor.setChecked(false);
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                Log.e("TAG", "onCancelled", databaseError.toException());
+            }
+        });
+
 
     }
 
