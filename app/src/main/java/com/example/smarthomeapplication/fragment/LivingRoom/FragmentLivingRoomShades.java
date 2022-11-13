@@ -64,7 +64,7 @@ public class FragmentLivingRoomShades extends Fragment implements View.OnClickLi
         {
 
             case R.id.back_arrow_shades:
-                showTopLevelFragment(new FragmentBathroom());
+                showTopLevelFragment(new FragmentLivingRoom());
                 break;
 
         }

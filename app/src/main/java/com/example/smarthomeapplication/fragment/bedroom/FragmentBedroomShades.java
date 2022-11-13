@@ -64,7 +64,7 @@ public class FragmentBedroomShades extends Fragment implements View.OnClickListe
         {
 
             case R.id.back_arrow_shades:
-                showTopLevelFragment(new FragmentBathroom());
+                showTopLevelFragment(new FragmentBedroom());
                 break;
 
         }

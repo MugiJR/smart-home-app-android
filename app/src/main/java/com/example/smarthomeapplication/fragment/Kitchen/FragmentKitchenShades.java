@@ -14,7 +14,6 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.example.smarthomeapplication.R;
-import com.example.smarthomeapplication.fragment.Bathroom.FragmentBathroom;
 
 public class FragmentKitchenShades extends Fragment implements View.OnClickListener {
 
@@ -64,7 +63,7 @@ public class FragmentKitchenShades extends Fragment implements View.OnClickListe
         {
 
             case R.id.back_arrow_shades:
-                showTopLevelFragment(new FragmentBathroom());
+                showTopLevelFragment(new FragmentKitchen());
                 break;
 
         }
