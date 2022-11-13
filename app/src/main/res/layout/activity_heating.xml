@@ -114,18 +114,16 @@
                 android:text="@string/ac"
                 android:textSize="20sp" />
 
-            <androidx.appcompat.widget.SwitchCompat
+            <Switch
                 android:id="@+id/switchAC"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="2"
                 android:layout_marginEnd="68dp"
-                android:textOff="@string/off"
-                android:textOn="@string/on"
-                android:thumb="@drawable/thumb"
                 android:layout_marginTop="10dp"
-                app:showText="true"
-                app:track="@drawable/track" />
+                android:paddingStart="10dp"
+                android:scrollbarSize="30dp" />
+
         </LinearLayout>
 
         <LinearLayout
@@ -143,18 +141,16 @@
                 android:text="@string/heater"
                 android:textSize="20sp" />
 
-            <androidx.appcompat.widget.SwitchCompat
+
+            <Switch
                 android:id="@+id/switchHeater"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="2"
                 android:layout_marginEnd="68dp"
-                android:textOff="@string/off"
-                android:textOn="@string/on"
-                android:thumb="@drawable/thumb"
                 android:layout_marginTop="10dp"
-                app:showText="true"
-                app:track="@drawable/track" />
+                android:paddingStart="10dp"
+                android:scrollbarSize="30dp" />
         </LinearLayout>
 
     </LinearLayout>
