@@ -1,33 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/black">
+
+    <!--    <ImageView-->
+    <!--        android:id="@+id/imageView5"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        app:srcCompat="@drawable/on" />-->
+
 
     <ImageView
-        android:id="@+id/imageView5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/on" />
+        android:id="@+id/back_arrow"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/left_arrow" />
 
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@android:color/transparent"
-        android:text="←"
-        android:textColor="#CBCBCC"
-        android:textSize="34sp"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="0dp" />
+
+
+    <!--    <LinearLayout-->
+    <!--        android:layout_width="287dp"-->
+    <!--        android:layout_height="373dp"-->
+    <!--        android:gravity="bottom"-->
+    <!--        android:orientation="horizontal">-->
+
 
     <Switch
-        android:id="@+id/switch4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/lightstatus"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:showText="false"
-        android:text="Lights ON"
+        android:text="The Switch of the Light"
         android:textColor="#CBCBCC"
         android:textSize="24sp"
         android:textStyle="bold"
@@ -36,4 +44,7 @@
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="349dp" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!--    </LinearLayout>-->
+
+</LinearLayout>
