@@ -15,6 +15,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.example.smarthomeapplication.PopUpClass;
 import com.example.smarthomeapplication.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -31,6 +32,7 @@ public class FragmentBathroomHeating extends Fragment implements View.OnClickLis
     private Switch mAC, mHeater;
     private DatabaseReference mRef, mRefCurrentTemp, mRefAC, mRefHeater;
     private FirebaseDatabase db;
+    private Boolean isOpened;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -85,28 +87,50 @@ public class FragmentBathroomHeating extends Fragment implements View.OnClickLis
             }
         });
 
-        mAC.setOnClickListener(view12 -> {
+        mAC.setOnClickListener(view1 -> {
             mRef.child("AC").setValue((mAC.isChecked()) ? 1 : 0).addOnSuccessListener(runnable -> {
 
             });
             if (mAC.isChecked()) {
-                Toast.makeText(getActivity(),"AC has been turned ON!",Toast.LENGTH_SHORT).show();
+                //Open
+                mRef.child("AC").setValue(1).addOnSuccessListener(runnable -> {
+
+                });
+                PopUpClass popUpClass = new PopUpClass();
+                isOpened = true;
+                popUpClass.showPopupWindow(view1, "AC is ON");
             }
             else {
-                Toast.makeText(getActivity(),"AC has been turned OFF!",Toast.LENGTH_SHORT).show();
-            }
+               //Close
+                mRef.child("AC").setValue(0).addOnSuccessListener(runnable -> {
+
+                });
+                PopUpClass popUpClass = new PopUpClass();
+                isOpened = false;
+                popUpClass.showPopupWindow(view1, "AC is OFF");            }
         });
 
-        mHeater.setOnClickListener(view12 -> {
+        mHeater.setOnClickListener(view1 -> {
             mRef.child("Heater").setValue((mHeater.isChecked()) ? 1 : 0).addOnSuccessListener(runnable -> {
 
             });
             if (mHeater.isChecked()) {
-                Toast.makeText(getActivity(),"Heater has been turned ON!",Toast.LENGTH_SHORT).show();
+                //Open
+                mRef.child("Heater").setValue(1).addOnSuccessListener(runnable -> {
+
+                });
+                PopUpClass popUpClass = new PopUpClass();
+                isOpened = true;
+                popUpClass.showPopupWindow(view1, "Heater is ON");
             }
             else {
-                Toast.makeText(getActivity(),"Heater has been turned OFF!",Toast.LENGTH_SHORT).show();
-            }
+                //Close
+                mRef.child("Heater").setValue(0).addOnSuccessListener(runnable -> {
+
+                });
+                PopUpClass popUpClass = new PopUpClass();
+                isOpened = false;
+                popUpClass.showPopupWindow(view1, "Heater is OFF");            }
         });
 
         mRefCurrentTemp.addListenerForSingleValueEvent(new ValueEventListener() {

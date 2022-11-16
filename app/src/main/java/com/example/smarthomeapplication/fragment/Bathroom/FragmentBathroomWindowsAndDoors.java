@@ -16,6 +16,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.widget.SwitchCompat;
 import androidx.fragment.app.Fragment;
 
+import com.example.smarthomeapplication.PopUpClass;
 import com.example.smarthomeapplication.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -30,6 +31,8 @@ public class FragmentBathroomWindowsAndDoors extends Fragment implements View.On
     private ImageView mButtonBack;
     private DatabaseReference mRef, mRefWindow, mRefDoor;
     private FirebaseDatabase db;
+    private Boolean isOpened;
+
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -58,30 +61,50 @@ public class FragmentBathroomWindowsAndDoors extends Fragment implements View.On
         mButtonBack.setOnClickListener(this);
 
 
-        mSwitchWindow.setOnClickListener(view12 -> {
-            mRef.child("Window").setValue((mSwitchWindow.isChecked()) ? 1 : 0).addOnSuccessListener(runnable -> {
-
-            });
-            if (mSwitchWindow.isChecked()) {
-                Toast.makeText(getActivity(),"Windows are opening...",Toast.LENGTH_SHORT).show();
-            }
-            else {
-                Toast.makeText(getActivity(),"Windows are closing...",Toast.LENGTH_SHORT).show();
-            }
-
-        });
-
-
         mSwitchDoor.setOnClickListener(view1 -> {
             mRef.child("Door").setValue((mSwitchDoor.isChecked()) ? 1 : 0).addOnSuccessListener(runnable -> {
 
             });
             if (mSwitchDoor.isChecked()) {
-                Toast.makeText(getActivity(),"Doors are opening...",Toast.LENGTH_SHORT).show();
+                //Open
+                mRef.child("Door").setValue(1).addOnSuccessListener(runnable -> {
+
+                });
+                PopUpClass popUpClass = new PopUpClass();
+                isOpened = true;
+                popUpClass.showPopupWindow(view1, "Door is ON");
             }
             else {
-                Toast.makeText(getActivity(),"Doors are closing...",Toast.LENGTH_SHORT).show();
+                //Close
+                mRef.child("Door").setValue(0).addOnSuccessListener(runnable -> {
+
+                });
+                PopUpClass popUpClass = new PopUpClass();
+                isOpened = false;
+                popUpClass.showPopupWindow(view1, "Door is OFF");            }
+        });
+
+        mSwitchWindow.setOnClickListener(view1 -> {
+            mRef.child("Window").setValue((mSwitchWindow.isChecked()) ? 1 : 0).addOnSuccessListener(runnable -> {
+
+            });
+            if (mSwitchWindow.isChecked()) {
+                //Open
+                mRef.child("Window").setValue(1).addOnSuccessListener(runnable -> {
+
+                });
+                PopUpClass popUpClass = new PopUpClass();
+                isOpened = true;
+                popUpClass.showPopupWindow(view1, "Window is ON");
             }
+            else {
+                //Close
+                mRef.child("Window").setValue(0).addOnSuccessListener(runnable -> {
+
+                });
+                PopUpClass popUpClass = new PopUpClass();
+                isOpened = false;
+                popUpClass.showPopupWindow(view1, "Window is OFF");            }
         });
 
         mRefWindow.addListenerForSingleValueEvent(new ValueEventListener() {
