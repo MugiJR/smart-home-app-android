@@ -36,10 +36,10 @@ import com.google.firebase.database.ValueEventListener;
 
 public class FragmentKitchenPlugins extends Fragment implements View.OnClickListener{
 
-    private Switch mOpenMicrowave, mOpenCoffeeMaker, mOpenDishwasher, mOpenRefrigerator;
+    private Switch mOpenMicrowave, mOpenCoffeeMaker, mOpenDishwasher;
     private ImageView mBack;
 
-    private DatabaseReference mRef, mRefRefrigerator, mRefDishwasher, mRefCoffeeMaker, mRefMicrowave;
+    private DatabaseReference mRef,mRefDishwasher, mRefCoffeeMaker, mRefMicrowave;
     private FirebaseDatabase database;
     private Boolean isOpened;
     private ImageView timer;
@@ -66,13 +66,11 @@ public class FragmentKitchenPlugins extends Fragment implements View.OnClickList
                 .child("PlugIns").child("CoffeeMaker");
         mRefDishwasher = database.getReference("SmartHome").child(FirebaseAuth.getInstance().getUid()).child("Kitchen")
                 .child("PlugIns").child("Dishwasher");
-        mRefRefrigerator = database.getReference("SmartHome").child(FirebaseAuth.getInstance().getUid()).child("Kitchen")
-                .child("PlugIns").child("Refrigerator");
+
 
         mOpenMicrowave = view.findViewById(R.id.switchMicrowaveOn);
         mOpenCoffeeMaker = view.findViewById(R.id.switchCoffeemakerOn);
         mOpenDishwasher = view.findViewById(R.id.switchDishwasherOn);
-        mOpenRefrigerator = view.findViewById(R.id.switchRefrigeratorOn);
         timer = view.findViewById(R.id.timerMicrowave);
         mBack = view.findViewById(R.id.back_arrow);
         mBack.setOnClickListener(this);
@@ -150,23 +148,6 @@ public class FragmentKitchenPlugins extends Fragment implements View.OnClickList
             }
         });
 
-        mOpenRefrigerator.setOnClickListener(view1 -> {
-            if (mOpenRefrigerator.isChecked()) {
-
-                mRef.child("Refrigerator").setValue(1).addOnSuccessListener(runnable -> {
-
-                });
-                PopUpClass popUpClass = new PopUpClass();
-                popUpClass.showPopupWindow(view1, "Refrigerator is ON");
-            } else {
-
-                mRef.child("Refrigerator").setValue(0).addOnSuccessListener(runnable -> {
-                    PopUpClass popUpClass = new PopUpClass();
-                    popUpClass.showPopupWindow(view1, "Refrigerator is OFF");
-                });
-
-            }
-        });
 
         mRefMicrowave.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -210,26 +191,6 @@ public class FragmentKitchenPlugins extends Fragment implements View.OnClickList
             }
         });
 
-        mRefRefrigerator.addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                // for(DataSnapshot singleSnapshot : dataSnapshot.getChildren()){
-                Long user = dataSnapshot.getValue(Long.class);
-                if (user.toString().equals("1")) {
-                    mOpenRefrigerator.setChecked(true);
-                    isOpened = true;
-                } else {
-                    mOpenRefrigerator.setChecked(false);
-                    isOpened = false;
-
-                }
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-                Log.e("TAG", "onCancelled", databaseError.toException());
-            }
-        });
 
         mRefDishwasher.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override

@@ -1,0 +1,1310 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:id="@+id/fragment_host_summary"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        xmlns:app="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/background"
+        android:orientation="vertical"
+        android:paddingBottom="15dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="7dp">
+            <ImageView
+                android:id="@+id/back_arrow"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="5dp"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/left_arrow" />
+            <ImageView
+                android:id="@+id/profile"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginStart="330dp"
+                android:src="@drawable/ic_profile"/>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_gravity="center"
+            android:text="HOME"
+            android:textColor="#4D6835"
+            android:textSize="40dp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="370dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:layout_margin="5dp"
+                android:padding="1dp"
+                app:cardCornerRadius="7dp"
+                card_view:cardBackgroundColor="@color/pluginsDark"
+                card_view:cardElevation="5dp"
+                card_view:cardUseCompatPadding="true">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:padding="1dp">
+
+                    <LinearLayout
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="start"
+                        android:orientation="horizontal"
+                        android:paddingTop="5dp"
+                        android:paddingStart="10dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Bedroom"
+                        android:layout_gravity="center_vertical"
+                        android:textColor="#FFFFFFFF"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/bedroom_icon"
+                        android:layout_marginStart="10dp"
+                        app:layout_constraintStart_toEndOf="@+id/textView" />
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="end"
+                        android:orientation="horizontal"
+                        android:paddingEnd="10dp">
+                    <ImageView
+                        android:id="@+id/EditBedroom"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/ic_edit"
+                        app:layout_constraintStart_toEndOf="@+id/textView" />
+                    </LinearLayout>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="15dp"
+                    android:orientation="vertical">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                <LinearLayout
+                    android:layout_width="150dp"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="15dp"
+                            android:text="Light"
+                            android:textColor="@color/plugins"
+                            android:textSize="12dp" />
+
+                        <Switch
+                            android:id="@+id/LightState_bedroom"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingStart="5dp"
+                            android:scrollbarSize="15dp" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="15dp"
+                            android:text="Windows"
+                            android:textColor="@color/plugins"
+                            android:textSize="12dp"/>
+
+                        <Switch
+                            android:id="@+id/WindowsState_bedroom"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingStart="5dp"
+                            android:scrollbarSize="15dp" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="15dp"
+                            android:text="Doors"
+                            android:textColor="@color/plugins"
+                            android:textSize="12dp"/>
+
+                        <Switch
+                            android:id="@+id/DoorsState_bedroom"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingStart="5dp"
+                            android:scrollbarSize="5dp" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="15dp"
+                            android:text="shades' level"
+                            android:textColor="@color/plugins"
+                            android:textSize="12dp"/>
+
+                        <TextView
+                            android:id="@+id/ShadesState_bedroom"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingStart="5dp"
+                            android:textSize="12dp"
+                            android:text="test"
+                            android:textColor="#0EEAFD"/>
+                    </LinearLayout>
+
+
+                </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="150dp"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="15dp"
+                            android:text="Devices: "
+                            android:textColor="#83AF97"
+                            android:textSize="16dp"/>
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="15dp"
+                                android:text="Lamp"
+                                android:textColor="@color/plugins"
+                                android:textSize="12dp"
+                                android:textStyle="bold" />
+
+                            <Switch
+                                android:id="@+id/LampState_bedroom"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingStart="5dp"
+                                android:scrollbarSize="15dp" />
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="15dp"
+                                android:text="Air Purifier"
+                                android:textColor="@color/plugins"
+                                android:textSize="12dp"
+                                android:textStyle="bold" />
+
+                            <Switch
+                                android:id="@+id/AirPurifierState_bedroom"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingStart="5dp"
+                                android:scrollbarSize="15dp" />
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="15dp"
+                                android:text="Bed Audio"
+                                android:textColor="@color/plugins"
+                                android:textSize="12dp"
+                                android:textStyle="bold" />
+
+                            <Switch
+                                android:id="@+id/AudioState_bedroom"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingStart="5dp"
+                                android:scrollbarSize="15dp" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="15dp"
+                            android:text="Heating: "
+                            android:textColor="#83AF97"
+                            android:textSize="16dp"/>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:orientation="horizontal">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="15dp"
+                                android:text="Temperature"
+                                android:textColor="@color/plugins"
+                                android:textSize="12dp"/>
+
+                            <TextView
+                                android:id="@+id/TemperatureState_bedroom"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingStart="5dp"
+                                android:textSize="15dp"
+                                android:text="test"
+                                android:textColor="#0EEAFD"/>
+                        </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:orientation="horizontal">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="15dp"
+                                    android:text="Heater"
+                                    android:textColor="@color/plugins"
+                                    android:textSize="12dp"/>
+
+                                <Switch
+                                    android:id="@+id/HeaterState_bedroom"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:paddingStart="5dp"
+                                    android:scrollbarSize="5dp" />
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:orientation="horizontal">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="15dp"
+                                    android:text="AC"
+                                    android:textColor="@color/plugins"
+                                    android:textSize="12dp"/>
+
+                                <Switch
+                                    android:id="@+id/ACState_bedroom"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:paddingStart="5dp"
+                                    android:scrollbarSize="5dp"
+                                    app:ignore="UseSwitchCompatOrMaterialXml" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:layout_margin="5dp"
+                android:padding="1dp"
+                app:cardCornerRadius="7dp"
+                card_view:cardBackgroundColor="@color/pluginsDark"
+                card_view:cardElevation="5dp"
+                card_view:cardUseCompatPadding="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:padding="1dp">
+
+                        <LinearLayout
+                            android:layout_width="200dp"
+                            android:layout_height="wrap_content"
+                            android:gravity="start"
+                            android:orientation="horizontal"
+                            android:paddingTop="5dp"
+                            android:paddingStart="10dp">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Bathroom"
+                                android:layout_gravity="center_vertical"
+                                android:textColor="#FFFFFFFF"
+                                android:textSize="20sp"
+                                android:textStyle="bold" />
+                            <ImageView
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:src="@drawable/bathroom_icon"
+                                android:layout_marginStart="10dp"
+                                app:layout_constraintStart_toEndOf="@+id/textView" />
+
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="end"
+                            android:orientation="horizontal"
+                            android:paddingEnd="10dp">
+                            <ImageView
+                                android:id="@+id/EditBathroom"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:src="@drawable/ic_edit"
+                                app:layout_constraintStart_toEndOf="@+id/textView" />
+                        </LinearLayout>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="15dp"
+                        android:orientation="vertical">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical">
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="15dp"
+                                        android:text="Light"
+                                        android:textColor="@color/plugins"
+                                        android:textSize="12dp" />
+
+                                    <Switch
+                                        android:id="@+id/LightState_bathroom"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:paddingStart="5dp"
+                                        android:scrollbarSize="15dp" />
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="15dp"
+                                        android:text="Windows"
+                                        android:textColor="@color/plugins"
+                                        android:textSize="12dp"/>
+
+                                    <Switch
+                                        android:id="@+id/WindowsState_bathroom"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:paddingStart="5dp"
+                                        android:scrollbarSize="15dp" />
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="15dp"
+                                        android:text="Doors"
+                                        android:textColor="@color/plugins"
+                                        android:textSize="12dp"/>
+
+                                    <Switch
+                                        android:id="@+id/DoorsState_bathroom"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:paddingStart="5dp"
+                                        android:scrollbarSize="5dp" />
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="15dp"
+                                        android:text="shades' level"
+                                        android:textColor="@color/plugins"
+                                        android:textSize="12dp"/>
+
+                                    <TextView
+                                        android:id="@+id/ShadesState_bathroom"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:paddingStart="5dp"
+                                        android:textSize="12dp"
+                                        android:text="test"
+                                        android:textColor="#0EEAFD"/>
+                                </LinearLayout>
+
+
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="15dp"
+                                    android:text="Devices: "
+                                    android:textColor="#83AF97"
+                                    android:textSize="16dp"/>
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="15dp"
+                                        android:text="Dryer"
+                                        android:textColor="@color/plugins"
+                                        android:textSize="12dp"
+                                        android:textStyle="bold" />
+
+                                    <Switch
+                                        android:id="@+id/DryerState_bathroom"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:paddingStart="5dp"
+                                        android:scrollbarSize="15dp" />
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="15dp"
+                                        android:text="Washer"
+                                        android:textColor="@color/plugins"
+                                        android:textSize="12dp"
+                                        android:textStyle="bold" />
+
+                                    <Switch
+                                        android:id="@+id/washerState_bathroom"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:paddingStart="5dp"
+                                        android:scrollbarSize="15dp" />
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="15dp"
+                                        android:text="Aromatherapy Diffuser"
+                                        android:textColor="@color/plugins"
+                                        android:textSize="12dp"
+                                        android:textStyle="bold" />
+
+                                    <Switch
+                                        android:id="@+id/AromatherapyState_bathroom"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:paddingStart="5dp"
+                                        android:scrollbarSize="15dp" />
+                                </LinearLayout>
+
+                            </LinearLayout>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="15dp"
+                                android:text="Heating: "
+                                android:textColor="#83AF97"
+                                android:textSize="16dp"/>
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_vertical"
+                                    android:orientation="horizontal">
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="15dp"
+                                        android:text="Temperature"
+                                        android:textColor="@color/plugins"
+                                        android:textSize="12dp"/>
+
+                                    <TextView
+                                        android:id="@+id/TemperatureState_bathroom"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:paddingStart="5dp"
+                                        android:textSize="15dp"
+                                        android:text="test"
+                                        android:textColor="#0EEAFD"/>
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_vertical"
+                                    android:orientation="horizontal">
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="15dp"
+                                        android:text="Heater"
+                                        android:textColor="@color/plugins"
+                                        android:textSize="12dp"/>
+
+                                    <Switch
+                                        android:id="@+id/HeaterState_bathroom"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:paddingStart="5dp"
+                                        android:scrollbarSize="5dp" />
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_vertical"
+                                    android:orientation="horizontal">
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="15dp"
+                                        android:text="AC"
+                                        android:textColor="@color/plugins"
+                                        android:textSize="12dp"/>
+
+                                    <Switch
+                                        android:id="@+id/ACState_bathroom"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:paddingStart="5dp"
+                                        android:scrollbarSize="5dp"
+                                        app:ignore="UseSwitchCompatOrMaterialXml" />
+                                </LinearLayout>
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:layout_margin="5dp"
+                android:padding="1dp"
+                app:cardCornerRadius="7dp"
+                card_view:cardBackgroundColor="@color/pluginsDark"
+                card_view:cardElevation="5dp"
+                card_view:cardUseCompatPadding="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:padding="1dp">
+
+                        <LinearLayout
+                            android:layout_width="200dp"
+                            android:layout_height="wrap_content"
+                            android:gravity="start"
+                            android:orientation="horizontal"
+                            android:paddingTop="5dp"
+                            android:paddingStart="10dp">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="LivingRoom"
+                                android:layout_gravity="center_vertical"
+                                android:textColor="#FFFFFFFF"
+                                android:textSize="20sp"
+                                android:textStyle="bold" />
+                            <ImageView
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_gravity="center_vertical"
+                                android:src="@drawable/livingroom_icon"
+                                android:layout_marginStart="10dp"
+                                app:layout_constraintStart_toEndOf="@+id/textView" />
+
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="end"
+                            android:orientation="horizontal"
+                            android:paddingEnd="10dp">
+                            <ImageView
+                                android:id="@+id/EditLivingroom"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:src="@drawable/ic_edit"
+                                app:layout_constraintStart_toEndOf="@+id/textView" />
+                        </LinearLayout>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="15dp"
+                        android:orientation="vertical">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical">
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="15dp"
+                                        android:text="Light"
+                                        android:textColor="@color/plugins"
+                                        android:textSize="12dp" />
+
+                                    <Switch
+                                        android:id="@+id/LightState_livingroom"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:paddingStart="5dp"
+                                        android:scrollbarSize="15dp" />
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="15dp"
+                                        android:text="Windows"
+                                        android:textColor="@color/plugins"
+                                        android:textSize="12dp"/>
+
+                                    <Switch
+                                        android:id="@+id/WindowsState_livingroom"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:paddingStart="5dp"
+                                        android:scrollbarSize="15dp" />
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="15dp"
+                                        android:text="Doors"
+                                        android:textColor="@color/plugins"
+                                        android:textSize="12dp"/>
+
+                                    <Switch
+                                        android:id="@+id/DoorsState_livingroom"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:paddingStart="5dp"
+                                        android:scrollbarSize="5dp" />
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="15dp"
+                                        android:text="shades' level"
+                                        android:textColor="@color/plugins"
+                                        android:textSize="12dp"/>
+
+                                    <TextView
+                                        android:id="@+id/ShadesState_livingroom"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:paddingStart="5dp"
+                                        android:textSize="12dp"
+                                        android:text="test"
+                                        android:textColor="#0EEAFD"/>
+                                </LinearLayout>
+
+
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="15dp"
+                                    android:text="Devices: "
+                                    android:textColor="#83AF97"
+                                    android:textSize="16dp"/>
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="15dp"
+                                        android:text="TV"
+                                        android:textColor="@color/plugins"
+                                        android:textSize="12dp"
+                                        android:textStyle="bold" />
+
+                                    <Switch
+                                        android:id="@+id/TVState_livingroom"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:paddingStart="5dp"
+                                        android:scrollbarSize="15dp" />
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="15dp"
+                                        android:text="Vacuum"
+                                        android:textColor="@color/plugins"
+                                        android:textSize="12dp"
+                                        android:textStyle="bold" />
+
+                                    <Switch
+                                        android:id="@+id/vacuumState_livingroom"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:paddingStart="5dp"
+                                        android:scrollbarSize="15dp" />
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="15dp"
+                                        android:text="Lamp"
+                                        android:textColor="@color/plugins"
+                                        android:textSize="12dp"
+                                        android:textStyle="bold" />
+
+                                    <Switch
+                                        android:id="@+id/LampState_livingroom"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:paddingStart="5dp"
+                                        android:scrollbarSize="15dp" />
+                                </LinearLayout>
+
+                            </LinearLayout>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="15dp"
+                                android:text="Heating: "
+                                android:textColor="#83AF97"
+                                android:textSize="16dp"/>
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_vertical"
+                                    android:orientation="horizontal">
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="15dp"
+                                        android:text="Temperature"
+                                        android:textColor="@color/plugins"
+                                        android:textSize="12dp"/>
+
+                                    <TextView
+                                        android:id="@+id/TemperatureState_livingroom"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:paddingStart="5dp"
+                                        android:textSize="15dp"
+                                        android:text="test"
+                                        android:textColor="#0EEAFD"/>
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_vertical"
+                                    android:orientation="horizontal">
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="15dp"
+                                        android:text="Heater"
+                                        android:textColor="@color/plugins"
+                                        android:textSize="12dp"/>
+
+                                    <Switch
+                                        android:id="@+id/HeaterState_livingroom"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:paddingStart="5dp"
+                                        android:scrollbarSize="5dp" />
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_vertical"
+                                    android:orientation="horizontal">
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="15dp"
+                                        android:text="AC"
+                                        android:textColor="@color/plugins"
+                                        android:textSize="12dp"/>
+
+                                    <Switch
+                                        android:id="@+id/ACState_livingroom"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:paddingStart="5dp"
+                                        android:scrollbarSize="5dp"
+                                        app:ignore="UseSwitchCompatOrMaterialXml" />
+                                </LinearLayout>
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:layout_margin="5dp"
+                android:padding="1dp"
+                app:cardCornerRadius="7dp"
+                card_view:cardBackgroundColor="@color/pluginsDark"
+                card_view:cardElevation="5dp"
+                card_view:cardUseCompatPadding="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:padding="1dp">
+
+                        <LinearLayout
+                            android:layout_width="200dp"
+                            android:layout_height="wrap_content"
+                            android:gravity="start"
+                            android:orientation="horizontal"
+                            android:paddingTop="5dp"
+                            android:paddingStart="10dp">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Kitchen"
+                                android:layout_gravity="center_vertical"
+                                android:textColor="#FFFFFFFF"
+                                android:textSize="20sp"
+                                android:textStyle="bold" />
+                            <ImageView
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_gravity="center_vertical"
+                                android:src="@drawable/kitchen_icon"
+                                android:layout_marginStart="10dp"
+                                app:layout_constraintStart_toEndOf="@+id/textView" />
+
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="end"
+                            android:orientation="horizontal"
+                            android:paddingEnd="10dp">
+                            <ImageView
+                                android:id="@+id/EditKitchen"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:src="@drawable/ic_edit"
+                                app:layout_constraintStart_toEndOf="@+id/textView" />
+                        </LinearLayout>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="15dp"
+                        android:orientation="vertical">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical">
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="15dp"
+                                        android:text="Light"
+                                        android:textColor="@color/plugins"
+                                        android:textSize="12dp" />
+
+                                    <Switch
+                                        android:id="@+id/LightState_kitchen"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:paddingStart="5dp"
+                                        android:scrollbarSize="15dp" />
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="15dp"
+                                        android:text="Windows"
+                                        android:textColor="@color/plugins"
+                                        android:textSize="12dp"/>
+
+                                    <Switch
+                                        android:id="@+id/WindowsState_kitchen"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:paddingStart="5dp"
+                                        android:scrollbarSize="15dp" />
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="15dp"
+                                        android:text="Doors"
+                                        android:textColor="@color/plugins"
+                                        android:textSize="12dp"/>
+
+                                    <Switch
+                                        android:id="@+id/DoorsState_kitchen"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:paddingStart="5dp"
+                                        android:scrollbarSize="5dp" />
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="15dp"
+                                        android:text="shades' level"
+                                        android:textColor="@color/plugins"
+                                        android:textSize="12dp"/>
+
+                                    <TextView
+                                        android:id="@+id/ShadesState_kitchen"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:paddingStart="5dp"
+                                        android:textSize="12dp"
+                                        android:text="test"
+                                        android:textColor="#0EEAFD"/>
+                                </LinearLayout>
+
+
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="15dp"
+                                    android:text="Devices: "
+                                    android:textColor="#83AF97"
+                                    android:textSize="16dp"/>
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="15dp"
+                                        android:text="Microwave"
+                                        android:textColor="@color/plugins"
+                                        android:textSize="12dp"
+                                        android:textStyle="bold" />
+
+                                    <Switch
+                                        android:id="@+id/MicrowaveState"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:paddingStart="5dp"
+                                        android:scrollbarSize="15dp" />
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="15dp"
+                                        android:text="Coffee Maker"
+                                        android:textColor="@color/plugins"
+                                        android:textSize="12dp"
+                                        android:textStyle="bold" />
+
+                                    <Switch
+                                        android:id="@+id/CoffeeState"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:paddingStart="5dp"
+                                        android:scrollbarSize="15dp" />
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="15dp"
+                                        android:text="Dishwasher"
+                                        android:textColor="@color/plugins"
+                                        android:textSize="12dp"
+                                        android:textStyle="bold" />
+
+                                    <Switch
+                                        android:id="@+id/DishwasherState"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:paddingStart="5dp"
+                                        android:scrollbarSize="15dp" />
+                                </LinearLayout>
+
+                            </LinearLayout>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="15dp"
+                                android:text="Heating: "
+                                android:textColor="#83AF97"
+                                android:textSize="16dp"/>
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_vertical"
+                                    android:orientation="horizontal">
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="15dp"
+                                        android:text="Temperature"
+                                        android:textColor="@color/plugins"
+                                        android:textSize="12dp"/>
+
+                                    <TextView
+                                        android:id="@+id/TemperatureState_kitchen"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:paddingStart="5dp"
+                                        android:textSize="15dp"
+                                        android:text="test"
+                                        android:textColor="#0EEAFD"/>
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_vertical"
+                                    android:orientation="horizontal">
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="15dp"
+                                        android:text="Heater"
+                                        android:textColor="@color/plugins"
+                                        android:textSize="12dp"/>
+
+                                    <Switch
+                                        android:id="@+id/HeaterState_kitchen"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:paddingStart="5dp"
+                                        android:scrollbarSize="5dp" />
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_vertical"
+                                    android:orientation="horizontal">
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="15dp"
+                                        android:text="AC"
+                                        android:textColor="@color/plugins"
+                                        android:textSize="12dp"/>
+
+                                    <Switch
+                                        android:id="@+id/ACState_kitchen"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:paddingStart="5dp"
+                                        android:scrollbarSize="5dp"
+                                        app:ignore="UseSwitchCompatOrMaterialXml" />
+                                </LinearLayout>
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+</ScrollView>
+
+

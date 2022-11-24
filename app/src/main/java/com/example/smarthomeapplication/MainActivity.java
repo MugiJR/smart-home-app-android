@@ -36,7 +36,7 @@ import com.google.firebase.database.ValueEventListener;
 public class MainActivity extends AppCompatActivity  implements View.OnClickListener {
 
     private Switch mOpenRouter, mOpenMusic;
-    private ImageView mBedRoom, mLivingRoom, mKitchen, mBathroom, profile;
+    private ImageView mBedRoom, mLivingRoom, mKitchen, mBathroom, profile, HomeSummary;
     private DatabaseReference mRef, mRefRouter, mRefMusic;
     private FirebaseDatabase database;
     private Boolean isOpened;
@@ -65,6 +65,7 @@ public class MainActivity extends AppCompatActivity  implements View.OnClickList
         mKitchen = (ImageView) findViewById(R.id.kitchenn);
         mBedRoom = (ImageView) findViewById(R.id.bedroom);
         profile = (ImageView) findViewById(R.id.profile);
+        HomeSummary = (ImageView) findViewById(R.id.HomeSummary);
 
         mOpenRouter = (Switch) findViewById(R.id.router);
         mOpenMusic = (Switch) findViewById(R.id.music);
@@ -76,6 +77,7 @@ public class MainActivity extends AppCompatActivity  implements View.OnClickList
         mLivingRoom.setOnClickListener(this);
         mKitchen.setOnClickListener(this);
         mBathroom.setOnClickListener(this);
+        HomeSummary.setOnClickListener(this);
 
         mOpenRouter.setOnClickListener(view1 -> {
             if (mOpenRouter.isChecked()) {
@@ -188,6 +190,10 @@ public class MainActivity extends AppCompatActivity  implements View.OnClickList
                 break;
             case R.id.bedroom:
                 MainActivity.this.showTopLevelFragment(new FragmentBedroom());
+                break;
+
+            case (R.id.HomeSummary):
+                startActivity(new Intent(this,SummaryActivity.class));
                 break;
         }
     }

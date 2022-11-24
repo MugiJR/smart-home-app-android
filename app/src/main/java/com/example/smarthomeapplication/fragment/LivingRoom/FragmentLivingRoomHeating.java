@@ -160,6 +160,7 @@ public class FragmentLivingRoomHeating extends Fragment implements View.OnClickL
                 Long user = dataSnapshot.getValue(Long.class);
                 if (user.toString().equals("1")) {
                     mAC.setChecked(true);
+                    mHeater.setChecked(false);
                 } else {
                     mAC.setChecked(false);
                 }
@@ -177,6 +178,8 @@ public class FragmentLivingRoomHeating extends Fragment implements View.OnClickL
                 Long user = dataSnapshot.getValue(Long.class);
                 if (user.toString().equals("1")) {
                     mHeater.setChecked(true);
+                    mAC.setChecked(false);
+
                 } else {
                     mHeater.setChecked(false);
                 }

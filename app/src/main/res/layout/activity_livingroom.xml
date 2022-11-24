@@ -52,7 +52,7 @@
                 android:id="@+id/LivingroomTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/kitchen"
+                android:text="@string/livingroom"
                 android:textColor="@color/Title"
                 android:textSize="30sp"
                 android:textStyle="bold" />
