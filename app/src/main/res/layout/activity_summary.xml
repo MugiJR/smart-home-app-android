@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:background="@color/background"
         android:orientation="vertical"
-        android:paddingBottom="15dp">
+        android:paddingBottom="5dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -55,7 +55,7 @@
 
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
-                android:layout_height="250dp"
+                android:layout_height="270dp"
                 android:layout_margin="5dp"
                 android:padding="1dp"
                 app:cardCornerRadius="7dp"
@@ -78,8 +78,8 @@
                         android:layout_width="200dp"
                         android:layout_height="wrap_content"
                         android:gravity="start"
+                        android:paddingTop="4dp"
                         android:orientation="horizontal"
-                        android:paddingTop="5dp"
                         android:paddingStart="10dp">
                     <TextView
                         android:layout_width="wrap_content"
@@ -114,7 +114,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:padding="15dp"
+                    android:padding="10dp"
                     android:orientation="vertical">
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -208,6 +208,7 @@
                     <LinearLayout
                         android:layout_width="150dp"
                         android:layout_height="match_parent"
+                        android:background="@drawable/custom_border"
                         android:orientation="vertical">
                         <TextView
                             android:layout_width="wrap_content"
@@ -215,7 +216,7 @@
                             android:layout_marginStart="15dp"
                             android:text="Devices: "
                             android:textColor="#83AF97"
-                            android:textSize="16dp"/>
+                            android:textSize="16sp"/>
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -226,15 +227,14 @@
                                 android:layout_marginStart="15dp"
                                 android:text="Lamp"
                                 android:textColor="@color/plugins"
-                                android:textSize="12dp"
+                                android:textSize="12sp"
                                 android:textStyle="bold" />
 
                             <Switch
                                 android:id="@+id/LampState_bedroom"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:paddingStart="5dp"
-                                android:scrollbarSize="15dp" />
+                                android:paddingStart="5dp" />
                         </LinearLayout>
                         <LinearLayout
                             android:layout_width="wrap_content"
@@ -246,15 +246,14 @@
                                 android:layout_marginStart="15dp"
                                 android:text="Air Purifier"
                                 android:textColor="@color/plugins"
-                                android:textSize="12dp"
+                                android:textSize="12sp"
                                 android:textStyle="bold" />
 
                             <Switch
                                 android:id="@+id/AirPurifierState_bedroom"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:paddingStart="5dp"
-                                android:scrollbarSize="15dp" />
+                                android:paddingStart="5sp" />
                         </LinearLayout>
                         <LinearLayout
                             android:layout_width="wrap_content"
@@ -266,15 +265,14 @@
                                 android:layout_marginStart="15dp"
                                 android:text="Bed Audio"
                                 android:textColor="@color/plugins"
-                                android:textSize="12dp"
+                                android:textSize="12sp"
                                 android:textStyle="bold" />
 
                             <Switch
                                 android:id="@+id/AudioState_bedroom"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:paddingStart="5dp"
-                                android:scrollbarSize="15dp" />
+                                android:paddingStart="5dp" />
                         </LinearLayout>
 
                     </LinearLayout>
@@ -282,6 +280,8 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:background="@drawable/custom_border"
+                        android:layout_marginTop="15dp"
                         android:orientation="vertical">
                         <TextView
                             android:layout_width="wrap_content"
@@ -289,7 +289,7 @@
                             android:layout_marginStart="15dp"
                             android:text="Heating: "
                             android:textColor="#83AF97"
-                            android:textSize="16dp"/>
+                            android:textSize="16sp"/>
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -366,7 +366,7 @@
 
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
-                android:layout_height="250dp"
+                android:layout_height="270dp"
                 android:layout_margin="5dp"
                 android:padding="1dp"
                 app:cardCornerRadius="7dp"
@@ -384,14 +384,14 @@
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:orientation="horizontal"
-                        android:padding="1dp">
+                        android:padding="3dp">
 
                         <LinearLayout
                             android:layout_width="200dp"
                             android:layout_height="wrap_content"
                             android:gravity="start"
+                            android:paddingTop="4dp"
                             android:orientation="horizontal"
-                            android:paddingTop="5dp"
                             android:paddingStart="10dp">
                             <TextView
                                 android:layout_width="wrap_content"
@@ -426,7 +426,7 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:padding="15dp"
+                        android:padding="10dp"
                         android:orientation="vertical">
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -520,6 +520,7 @@
                             <LinearLayout
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
+                                android:background="@drawable/custom_border"
                                 android:orientation="vertical">
                                 <TextView
                                     android:layout_width="wrap_content"
@@ -588,12 +589,13 @@
                                         android:paddingStart="5dp"
                                         android:scrollbarSize="15dp" />
                                 </LinearLayout>
-
                             </LinearLayout>
                         </LinearLayout>
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:background="@drawable/custom_border"
+                            android:layout_marginTop="15dp"
                             android:orientation="vertical">
                             <TextView
                                 android:layout_width="wrap_content"
@@ -677,7 +679,7 @@
 
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
-                android:layout_height="250dp"
+                android:layout_height="270dp"
                 android:layout_margin="5dp"
                 android:padding="1dp"
                 app:cardCornerRadius="7dp"
@@ -702,7 +704,7 @@
                             android:layout_height="wrap_content"
                             android:gravity="start"
                             android:orientation="horizontal"
-                            android:paddingTop="5dp"
+                            android:paddingTop="4dp"
                             android:paddingStart="10dp">
                             <TextView
                                 android:layout_width="wrap_content"
@@ -738,14 +740,14 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:padding="15dp"
+                        android:padding="10dp"
                         android:orientation="vertical">
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="horizontal">
                             <LinearLayout
-                                android:layout_width="wrap_content"
+                                android:layout_width="150dp"
                                 android:layout_height="match_parent"
                                 android:orientation="vertical">
                                 <LinearLayout
@@ -830,8 +832,9 @@
 
                             </LinearLayout>
                             <LinearLayout
-                                android:layout_width="wrap_content"
+                                android:layout_width="150dp"
                                 android:layout_height="match_parent"
+                                android:background="@drawable/custom_border"
                                 android:orientation="vertical">
                                 <TextView
                                     android:layout_width="wrap_content"
@@ -906,6 +909,8 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:background="@drawable/custom_border"
+                            android:layout_marginTop="15dp"
                             android:orientation="vertical">
                             <TextView
                                 android:layout_width="wrap_content"
@@ -913,7 +918,7 @@
                                 android:layout_marginStart="15dp"
                                 android:text="Heating: "
                                 android:textColor="#83AF97"
-                                android:textSize="16dp"/>
+                                android:textSize="16sp"/>
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -990,7 +995,7 @@
 
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
-                android:layout_height="250dp"
+                android:layout_height="270dp"
                 android:layout_margin="5dp"
                 android:padding="1dp"
                 app:cardCornerRadius="7dp"
@@ -1015,7 +1020,7 @@
                             android:layout_height="wrap_content"
                             android:gravity="start"
                             android:orientation="horizontal"
-                            android:paddingTop="5dp"
+                            android:paddingTop="4dp"
                             android:paddingStart="10dp">
                             <TextView
                                 android:layout_width="wrap_content"
@@ -1026,8 +1031,8 @@
                                 android:textSize="20sp"
                                 android:textStyle="bold" />
                             <ImageView
-                                android:layout_width="30dp"
-                                android:layout_height="30dp"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
                                 android:layout_gravity="center_vertical"
                                 android:src="@drawable/kitchen_icon"
                                 android:layout_marginStart="10dp"
@@ -1051,14 +1056,14 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:padding="15dp"
+                        android:padding="10dp"
                         android:orientation="vertical">
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="horizontal">
                             <LinearLayout
-                                android:layout_width="wrap_content"
+                                android:layout_width="150dp"
                                 android:layout_height="match_parent"
                                 android:orientation="vertical">
                                 <LinearLayout
@@ -1143,8 +1148,9 @@
 
                             </LinearLayout>
                             <LinearLayout
-                                android:layout_width="wrap_content"
+                                android:layout_width="150dp"
                                 android:layout_height="match_parent"
+                                android:background="@drawable/custom_border"
                                 android:orientation="vertical">
                                 <TextView
                                     android:layout_width="wrap_content"
@@ -1152,7 +1158,7 @@
                                     android:layout_marginStart="15dp"
                                     android:text="Devices: "
                                     android:textColor="#83AF97"
-                                    android:textSize="16dp"/>
+                                    android:textSize="16sp"/>
                                 <LinearLayout
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
@@ -1163,15 +1169,14 @@
                                         android:layout_marginStart="15dp"
                                         android:text="Microwave"
                                         android:textColor="@color/plugins"
-                                        android:textSize="12dp"
+                                        android:textSize="12sp"
                                         android:textStyle="bold" />
 
                                     <Switch
                                         android:id="@+id/MicrowaveState"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
-                                        android:paddingStart="5dp"
-                                        android:scrollbarSize="15dp" />
+                                        android:paddingStart="5dp" />
                                 </LinearLayout>
                                 <LinearLayout
                                     android:layout_width="wrap_content"
@@ -1219,6 +1224,8 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:background="@drawable/custom_border"
+                            android:layout_marginTop="15dp"
                             android:orientation="vertical">
                             <TextView
                                 android:layout_width="wrap_content"
@@ -1226,7 +1233,7 @@
                                 android:layout_marginStart="15dp"
                                 android:text="Heating: "
                                 android:textColor="#83AF97"
-                                android:textSize="16dp"/>
+                                android:textSize="16sp"/>
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -1284,7 +1291,7 @@
                                         android:layout_marginStart="15dp"
                                         android:text="AC"
                                         android:textColor="@color/plugins"
-                                        android:textSize="12dp"/>
+                                        android:textSize="12sp"/>
 
                                     <Switch
                                         android:id="@+id/ACState_kitchen"
