@@ -98,6 +98,9 @@ public class FragmentBedroomHeating extends Fragment implements View.OnClickList
                 mRef.child("AC").setValue(1).addOnSuccessListener(runnable -> {
 
                 });
+                mRef.child("Heater").setValue(0).addOnSuccessListener(runnable -> {
+
+                });
                 PopUpClass popUpClass = new PopUpClass();
                 isOpened = true;
                 popUpClass.showPopupWindow(view1, "AC is ON");
@@ -105,6 +108,9 @@ public class FragmentBedroomHeating extends Fragment implements View.OnClickList
             else {
                 //Close
                 mRef.child("AC").setValue(0).addOnSuccessListener(runnable -> {
+
+                });
+                mRef.child("Heater").setValue(1).addOnSuccessListener(runnable -> {
 
                 });
                 PopUpClass popUpClass = new PopUpClass();
@@ -121,6 +127,9 @@ public class FragmentBedroomHeating extends Fragment implements View.OnClickList
                 mRef.child("Heater").setValue(1).addOnSuccessListener(runnable -> {
 
                 });
+                mRef.child("AC").setValue(0).addOnSuccessListener(runnable -> {
+
+                });
                 PopUpClass popUpClass = new PopUpClass();
                 isOpened = true;
                 popUpClass.showPopupWindow(view1, "Heater is ON");
@@ -128,6 +137,9 @@ public class FragmentBedroomHeating extends Fragment implements View.OnClickList
             else {
                 //Close
                 mRef.child("Heater").setValue(0).addOnSuccessListener(runnable -> {
+
+                });
+                mRef.child("AC").setValue(1).addOnSuccessListener(runnable -> {
 
                 });
                 PopUpClass popUpClass = new PopUpClass();

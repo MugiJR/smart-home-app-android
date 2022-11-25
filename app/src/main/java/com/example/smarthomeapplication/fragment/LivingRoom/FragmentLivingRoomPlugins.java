@@ -60,11 +60,11 @@ public class FragmentLivingRoomPlugins extends Fragment implements View.OnClickL
 
         database = FirebaseDatabase.getInstance();
         mRef = database.getReference("SmartHome").child(FirebaseAuth.getInstance().getUid()).child("LivingRoom").child("PlugIns");
-        mRefTV = database.getReference("SmartHome").child(FirebaseAuth.getInstance().getUid()).child("Kitchen")
+        mRefTV = database.getReference("SmartHome").child(FirebaseAuth.getInstance().getUid()).child("LivingRoom")
                 .child("PlugIns").child("TV");
-        mRefVacuum = database.getReference("SmartHome").child(FirebaseAuth.getInstance().getUid()).child("Kitchen")
+        mRefVacuum = database.getReference("SmartHome").child(FirebaseAuth.getInstance().getUid()).child("LivingRoom")
                 .child("PlugIns").child("Vacuum");
-        mRefLamp = database.getReference("SmartHome").child(FirebaseAuth.getInstance().getUid()).child("Kitchen")
+        mRefLamp = database.getReference("SmartHome").child(FirebaseAuth.getInstance().getUid()).child("LivingRoom")
                 .child("PlugIns").child("Lamp");
 
 
