@@ -85,7 +85,7 @@ public class FragmentBedroomHeating extends Fragment implements View.OnClickList
                 mRef.child("Temperature").setValue(seekBar.getProgress()).addOnSuccessListener(runnable -> {
 
                 });
-                Toast.makeText(getActivity(),"Current temperature has been set to "+ seekBar.getProgress()+ " C.",Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), "Current temperature has been set to " + seekBar.getProgress() + " C.", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -104,8 +104,7 @@ public class FragmentBedroomHeating extends Fragment implements View.OnClickList
                 PopUpClass popUpClass = new PopUpClass();
                 isOpened = true;
                 popUpClass.showPopupWindow(view1, "AC is ON");
-            }
-            else {
+            } else {
                 //Close
                 mRef.child("AC").setValue(0).addOnSuccessListener(runnable -> {
 
@@ -115,7 +114,8 @@ public class FragmentBedroomHeating extends Fragment implements View.OnClickList
                 });
                 PopUpClass popUpClass = new PopUpClass();
                 isOpened = false;
-                popUpClass.showPopupWindow(view1, "AC is OFF");            }
+                popUpClass.showPopupWindow(view1, "AC is OFF");
+            }
         });
 
         mHeater.setOnClickListener(view1 -> {
@@ -133,8 +133,7 @@ public class FragmentBedroomHeating extends Fragment implements View.OnClickList
                 PopUpClass popUpClass = new PopUpClass();
                 isOpened = true;
                 popUpClass.showPopupWindow(view1, "Heater is ON");
-            }
-            else {
+            } else {
                 //Close
                 mRef.child("Heater").setValue(0).addOnSuccessListener(runnable -> {
 
@@ -144,7 +143,8 @@ public class FragmentBedroomHeating extends Fragment implements View.OnClickList
                 });
                 PopUpClass popUpClass = new PopUpClass();
                 isOpened = false;
-                popUpClass.showPopupWindow(view1, "Heater is OFF");            }
+                popUpClass.showPopupWindow(view1, "Heater is OFF");
+            }
         });
 
         mRefCurrentTemp.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -173,6 +173,7 @@ public class FragmentBedroomHeating extends Fragment implements View.OnClickList
                 if (user.toString().equals("1")) {
                     mAC.setChecked(true);
                     mHeater.setChecked(false);
+                    mRef.child("Heater").setValue(0);
                 } else {
                     mAC.setChecked(false);
                 }
@@ -191,6 +192,7 @@ public class FragmentBedroomHeating extends Fragment implements View.OnClickList
                 if (user.toString().equals("1")) {
                     mHeater.setChecked(true);
                     mAC.setChecked(false);
+                    mRef.child("AC").setValue(0);
 
                 } else {
                     mHeater.setChecked(false);

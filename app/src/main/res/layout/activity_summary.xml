@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
-    android:id="@+id/fragment_host_summary"
+    android:id="@+id/fragment_host_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <LinearLayout
@@ -32,7 +32,6 @@
                 android:id="@+id/profile"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
-                android:layout_marginTop="15dp"
                 android:layout_marginStart="330dp"
                 android:src="@drawable/ic_profile"/>
         </LinearLayout>
@@ -40,12 +39,36 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="5dp"
             android:layout_gravity="center"
             android:text="HOME"
             android:textColor="#4D6835"
             android:textSize="40dp"
             android:textStyle="bold" />
+    <LinearLayout
+        android:layout_width="370dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp"
+        android:paddingTop="5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:text="Entire Home Lights:"
+                android:textStyle="bold"
+                android:textColor="@color/pluginsDark"
+                android:textSize="15dp" />
+
+            <Switch
+                android:id="@+id/allHouseLight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="5dp"
+                android:scrollbarSize="15dp" />
+    </LinearLayout>
 
         <LinearLayout
             android:layout_width="370dp"
@@ -141,6 +164,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:paddingStart="5dp"
+                            android:clickable="false"
                             android:scrollbarSize="15dp" />
                     </LinearLayout>
                     <LinearLayout
@@ -160,6 +184,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:paddingStart="5dp"
+                            android:clickable="false"
                             android:scrollbarSize="15dp" />
                     </LinearLayout>
                     <LinearLayout
@@ -179,6 +204,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:paddingStart="5dp"
+                            android:clickable="false"
                             android:scrollbarSize="5dp" />
                     </LinearLayout>
                     <LinearLayout
@@ -199,7 +225,7 @@
                             android:layout_height="wrap_content"
                             android:paddingStart="5dp"
                             android:textSize="12dp"
-                            android:text="test"
+                            android:text="0%"
                             android:textColor="#0EEAFD"/>
                     </LinearLayout>
 
@@ -234,6 +260,7 @@
                                 android:id="@+id/LampState_bedroom"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:clickable="false"
                                 android:paddingStart="5dp" />
                         </LinearLayout>
                         <LinearLayout
@@ -253,6 +280,7 @@
                                 android:id="@+id/AirPurifierState_bedroom"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:clickable="false"
                                 android:paddingStart="5sp" />
                         </LinearLayout>
                         <LinearLayout
@@ -272,6 +300,7 @@
                                 android:id="@+id/AudioState_bedroom"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:clickable="false"
                                 android:paddingStart="5dp" />
                         </LinearLayout>
 
@@ -313,7 +342,7 @@
                                 android:layout_height="wrap_content"
                                 android:paddingStart="5dp"
                                 android:textSize="15dp"
-                                android:text="test"
+                                android:text="0 C"
                                 android:textColor="#0EEAFD"/>
                         </LinearLayout>
                             <LinearLayout
@@ -334,6 +363,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:paddingStart="5dp"
+                                    android:clickable="false"
                                     android:scrollbarSize="5dp" />
                             </LinearLayout>
                             <LinearLayout
@@ -355,6 +385,7 @@
                                     android:layout_height="wrap_content"
                                     android:paddingStart="5dp"
                                     android:scrollbarSize="5dp"
+                                    android:clickable="false"
                                     app:ignore="UseSwitchCompatOrMaterialXml" />
                             </LinearLayout>
                         </LinearLayout>
@@ -453,6 +484,7 @@
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:paddingStart="5dp"
+                                        android:clickable="false"
                                         android:scrollbarSize="15dp" />
                                 </LinearLayout>
                                 <LinearLayout
@@ -472,6 +504,7 @@
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:paddingStart="5dp"
+                                        android:clickable="false"
                                         android:scrollbarSize="15dp" />
                                 </LinearLayout>
                                 <LinearLayout
@@ -491,6 +524,7 @@
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:paddingStart="5dp"
+                                        android:clickable="false"
                                         android:scrollbarSize="5dp" />
                                 </LinearLayout>
                                 <LinearLayout
@@ -511,7 +545,7 @@
                                         android:layout_height="wrap_content"
                                         android:paddingStart="5dp"
                                         android:textSize="12dp"
-                                        android:text="test"
+                                        android:text="0%"
                                         android:textColor="#0EEAFD"/>
                                 </LinearLayout>
 
@@ -547,6 +581,7 @@
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:paddingStart="5dp"
+                                        android:clickable="false"
                                         android:scrollbarSize="15dp" />
                                 </LinearLayout>
                                 <LinearLayout
@@ -567,6 +602,7 @@
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:paddingStart="5dp"
+                                        android:clickable="false"
                                         android:scrollbarSize="15dp" />
                                 </LinearLayout>
                                 <LinearLayout
@@ -587,6 +623,7 @@
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:paddingStart="5dp"
+                                        android:clickable="false"
                                         android:scrollbarSize="15dp" />
                                 </LinearLayout>
                             </LinearLayout>
@@ -627,7 +664,7 @@
                                         android:layout_height="wrap_content"
                                         android:paddingStart="5dp"
                                         android:textSize="15dp"
-                                        android:text="test"
+                                        android:text="O C"
                                         android:textColor="#0EEAFD"/>
                                 </LinearLayout>
                                 <LinearLayout
@@ -648,6 +685,7 @@
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:paddingStart="5dp"
+                                        android:clickable="false"
                                         android:scrollbarSize="5dp" />
                                 </LinearLayout>
                                 <LinearLayout
@@ -669,6 +707,7 @@
                                         android:layout_height="wrap_content"
                                         android:paddingStart="5dp"
                                         android:scrollbarSize="5dp"
+                                        android:clickable="false"
                                         app:ignore="UseSwitchCompatOrMaterialXml" />
                                 </LinearLayout>
                             </LinearLayout>
@@ -767,6 +806,7 @@
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:paddingStart="5dp"
+                                        android:clickable="false"
                                         android:scrollbarSize="15dp" />
                                 </LinearLayout>
                                 <LinearLayout
@@ -786,6 +826,7 @@
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:paddingStart="5dp"
+                                        android:clickable="false"
                                         android:scrollbarSize="15dp" />
                                 </LinearLayout>
                                 <LinearLayout
@@ -805,6 +846,7 @@
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:paddingStart="5dp"
+                                        android:clickable="false"
                                         android:scrollbarSize="5dp" />
                                 </LinearLayout>
                                 <LinearLayout
@@ -825,7 +867,7 @@
                                         android:layout_height="wrap_content"
                                         android:paddingStart="5dp"
                                         android:textSize="12dp"
-                                        android:text="test"
+                                        android:text="0%"
                                         android:textColor="#0EEAFD"/>
                                 </LinearLayout>
 
@@ -861,6 +903,7 @@
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:paddingStart="5dp"
+                                        android:clickable="false"
                                         android:scrollbarSize="15dp" />
                                 </LinearLayout>
                                 <LinearLayout
@@ -881,6 +924,7 @@
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:paddingStart="5dp"
+                                        android:clickable="false"
                                         android:scrollbarSize="15dp" />
                                 </LinearLayout>
                                 <LinearLayout
@@ -901,6 +945,7 @@
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:paddingStart="5dp"
+                                        android:clickable="false"
                                         android:scrollbarSize="15dp" />
                                 </LinearLayout>
 
@@ -942,7 +987,7 @@
                                         android:layout_height="wrap_content"
                                         android:paddingStart="5dp"
                                         android:textSize="15dp"
-                                        android:text="test"
+                                        android:text="0 C"
                                         android:textColor="#0EEAFD"/>
                                 </LinearLayout>
                                 <LinearLayout
@@ -963,6 +1008,7 @@
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:paddingStart="5dp"
+                                        android:clickable="false"
                                         android:scrollbarSize="5dp" />
                                 </LinearLayout>
                                 <LinearLayout
@@ -983,6 +1029,7 @@
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:paddingStart="5dp"
+                                        android:clickable="false"
                                         android:scrollbarSize="5dp"
                                         app:ignore="UseSwitchCompatOrMaterialXml" />
                                 </LinearLayout>
@@ -1083,6 +1130,7 @@
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:paddingStart="5dp"
+                                        android:clickable="false"
                                         android:scrollbarSize="15dp" />
                                 </LinearLayout>
                                 <LinearLayout
@@ -1102,6 +1150,7 @@
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:paddingStart="5dp"
+                                        android:clickable="false"
                                         android:scrollbarSize="15dp" />
                                 </LinearLayout>
                                 <LinearLayout
@@ -1121,6 +1170,7 @@
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:paddingStart="5dp"
+                                        android:clickable="false"
                                         android:scrollbarSize="5dp" />
                                 </LinearLayout>
                                 <LinearLayout
@@ -1141,7 +1191,7 @@
                                         android:layout_height="wrap_content"
                                         android:paddingStart="5dp"
                                         android:textSize="12dp"
-                                        android:text="test"
+                                        android:text="0%"
                                         android:textColor="#0EEAFD"/>
                                 </LinearLayout>
 
@@ -1176,7 +1226,8 @@
                                         android:id="@+id/MicrowaveState"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
-                                        android:paddingStart="5dp" />
+                                        android:paddingStart="5dp"
+                                        android:clickable="false"/>
                                 </LinearLayout>
                                 <LinearLayout
                                     android:layout_width="wrap_content"
@@ -1196,6 +1247,7 @@
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:paddingStart="5dp"
+                                        android:clickable="false"
                                         android:scrollbarSize="15dp" />
                                 </LinearLayout>
                                 <LinearLayout
@@ -1216,6 +1268,7 @@
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:paddingStart="5dp"
+                                        android:clickable="false"
                                         android:scrollbarSize="15dp" />
                                 </LinearLayout>
 
@@ -1257,7 +1310,7 @@
                                         android:layout_height="wrap_content"
                                         android:paddingStart="5dp"
                                         android:textSize="15dp"
-                                        android:text="test"
+                                        android:text="0 C"
                                         android:textColor="#0EEAFD"/>
                                 </LinearLayout>
                                 <LinearLayout
@@ -1278,6 +1331,7 @@
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:paddingStart="5dp"
+                                        android:clickable="false"
                                         android:scrollbarSize="5dp" />
                                 </LinearLayout>
                                 <LinearLayout
@@ -1299,6 +1353,7 @@
                                         android:layout_height="wrap_content"
                                         android:paddingStart="5dp"
                                         android:scrollbarSize="5dp"
+                                        android:clickable="false"
                                         app:ignore="UseSwitchCompatOrMaterialXml" />
                                 </LinearLayout>
                             </LinearLayout>

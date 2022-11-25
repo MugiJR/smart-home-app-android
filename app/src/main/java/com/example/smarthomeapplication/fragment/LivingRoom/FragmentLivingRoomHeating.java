@@ -173,6 +173,7 @@ public class FragmentLivingRoomHeating extends Fragment implements View.OnClickL
                 if (user.toString().equals("1")) {
                     mAC.setChecked(true);
                     mHeater.setChecked(false);
+                    mRef.child("Heater").setValue(0);
                 } else {
                     mAC.setChecked(false);
                 }
@@ -191,6 +192,7 @@ public class FragmentLivingRoomHeating extends Fragment implements View.OnClickL
                 if (user.toString().equals("1")) {
                     mHeater.setChecked(true);
                     mAC.setChecked(false);
+                    mRef.child("AC").setValue(0);
 
                 } else {
                     mHeater.setChecked(false);

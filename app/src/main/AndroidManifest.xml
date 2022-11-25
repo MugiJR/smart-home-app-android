@@ -20,10 +20,12 @@
         </activity>
         <activity
             android:name=".MainActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/Theme.SmartHome.NoActionBar"/>
         <activity
             android:name=".IntroActivity"
-            android:exported="true" >
+            android:exported="true"
+            android:theme="@style/Theme.SmartHome.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -32,11 +34,13 @@
         </activity>
         <activity
             android:name=".RegisterActivity"
-            android:exported="true" >
+            android:exported="true"
+            android:theme="@style/Theme.SmartHome.NoActionBar">
         </activity>
         <activity
             android:name=".LoginActivity"
-            android:exported="true" >
+            android:exported="true"
+            android:theme="@style/Theme.SmartHome.NoActionBar">
         </activity>
     </application>
 

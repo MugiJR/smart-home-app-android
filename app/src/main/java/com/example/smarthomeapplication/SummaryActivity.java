@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -24,7 +25,6 @@ import com.example.smarthomeapplication.fragment.Bathroom.FragmentBathroom;
 import com.example.smarthomeapplication.fragment.Kitchen.FragmentKitchen;
 import com.example.smarthomeapplication.fragment.LivingRoom.FragmentLivingRoom;
 import com.example.smarthomeapplication.fragment.bedroom.FragmentBedroom;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -36,7 +36,7 @@ import com.google.firebase.database.ValueEventListener;
 public class SummaryActivity extends AppCompatActivity  implements View.OnClickListener {
 
     private ImageView mBack, mEditBedroom, mEditLivingRoom, mEditKitchen, mEditBathroom, profile;
-    private DatabaseReference mRefBedroom, mRefBathroom, mRefLivingRoom, mRefKitchen;
+    private DatabaseReference mRefBedroom, mRefBathroom, mRefLivingRoom, mRefKitchen, mRefHouseLight;
     private DatabaseReference mRefCurrentTempBedroom, mRefACBedroom, mRefHeaterBedroom;
     private DatabaseReference mRefCurrentTempBathroom, mRefACBathroom, mRefHeaterBathroom;
     private DatabaseReference mRefCurrentTempLivingRoom, mRefACLivingRoom, mRefHeaterLivingRoom;
@@ -67,6 +67,7 @@ public class SummaryActivity extends AppCompatActivity  implements View.OnClickL
 
     private Switch mACKit, mHeaterKit, mLightKit, mDoorsKit, mWindowsKit;
     private Switch mMicrowave, mCoffeeMaker, mDishwasher;
+    private Switch mHouseLight;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -81,6 +82,8 @@ public class SummaryActivity extends AppCompatActivity  implements View.OnClickL
 
         // DB instance
         db = FirebaseDatabase.getInstance();
+        mRefHouseLight = db.getReference("SmartHome").child(FirebaseAuth.getInstance().getUid()).child("Light");
+
         mRefBathroom = db.getReference("SmartHome").child(FirebaseAuth.getInstance().getUid()).child("Bathroom");
         mRefBedroom = db.getReference("SmartHome").child(FirebaseAuth.getInstance().getUid()).child("Bedroom");
         mRefLivingRoom = db.getReference("SmartHome").child(FirebaseAuth.getInstance().getUid()).child("LivingRoom");
@@ -240,11 +243,13 @@ public class SummaryActivity extends AppCompatActivity  implements View.OnClickL
         // Plugins Living room
         mTV = (Switch) findViewById(R.id.TVState_livingroom);
         mVacuum = (Switch) findViewById(R.id.vacuumState_livingroom);
-        mLightLiv = (Switch) findViewById(R.id.LampState_livingroom);
+        mLampLiv = (Switch) findViewById(R.id.LampState_livingroom);
         // Plugins Kitchen
         mMicrowave = (Switch) findViewById(R.id.MicrowaveState);
         mCoffeeMaker = (Switch) findViewById(R.id.CoffeeState);
         mDishwasher = (Switch) findViewById(R.id.DishwasherState);
+
+        mHouseLight = (Switch) findViewById(R.id.allHouseLight);
 
 
 
@@ -255,6 +260,49 @@ public class SummaryActivity extends AppCompatActivity  implements View.OnClickL
         mEditBathroom.setOnClickListener(this);
         mBack.setOnClickListener(this);
 
+        mHouseLight.setOnClickListener(view1 -> {
+            if (mHouseLight.isChecked()) {
+                mRefBathroom.child("LightIns").child("Light").setValue(1).addOnSuccessListener(runnable -> {});
+                mLightBath.setChecked(true);
+                mRefBedroom.child("LightIns").child("Light").setValue(1).addOnSuccessListener(runnable -> {});
+                mLightBed.setChecked(true);
+                mRefLivingRoom.child("LightIns").child("Light").setValue(1).addOnSuccessListener(runnable -> {});
+                mLightLiv.setChecked(true);
+                mRefKitchen.child("LightIns").child("Light").setValue(1).addOnSuccessListener(runnable -> {});
+                mLightKit.setChecked(true);
+                PopUpClass popUpClass = new PopUpClass();
+                popUpClass.showPopupWindow(view1, "All Lights are ON");
+            } else {
+
+                mRefBathroom.child("LightIns").child("Light").setValue(0).addOnSuccessListener(runnable -> {});
+                mLightBath.setChecked(false);
+                mRefBedroom.child("LightIns").child("Light").setValue(0).addOnSuccessListener(runnable -> {});
+                mLightBed.setChecked(false);
+                mRefLivingRoom.child("LightIns").child("Light").setValue(0).addOnSuccessListener(runnable -> {});
+                mLightLiv.setChecked(false);
+                mRefKitchen.child("LightIns").child("Light").setValue(0).addOnSuccessListener(runnable -> {});
+                mLightKit.setChecked(false);
+                PopUpClass popUpClass = new PopUpClass();
+                popUpClass.showPopupWindow(view1, "All Lights are OFF");
+            }
+        });
+        mRefHouseLight.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                Long user = dataSnapshot.getValue(Long.class);
+                if (user.toString().equals("1")) {
+                    mHouseLight.setChecked(true);
+                } else {
+                    mHouseLight.setChecked(false);
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                Log.e("TAG", "onCancelled", databaseError.toException());
+            }
+        });
+
        // Set state from Bathroom
         mRefLightBathroom.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -262,6 +310,7 @@ public class SummaryActivity extends AppCompatActivity  implements View.OnClickL
                 Long user = dataSnapshot.getValue(Long.class);
                 if (user.toString().equals("1")) {
                     mLightBath.setChecked(true);
+                    mHouseLight.setChecked(true);
                 } else {
                     mLightBath.setChecked(false);
                 }
@@ -422,6 +471,8 @@ public class SummaryActivity extends AppCompatActivity  implements View.OnClickL
                 Long user = dataSnapshot.getValue(Long.class);
                 if (user.toString().equals("1")) {
                     mLightBed.setChecked(true);
+                    mHouseLight.setChecked(true);
+
                 } else {
                     mLightBed.setChecked(false);
                 }
@@ -582,6 +633,8 @@ public class SummaryActivity extends AppCompatActivity  implements View.OnClickL
                 Long user = dataSnapshot.getValue(Long.class);
                 if (user.toString().equals("1")) {
                     mLightKit.setChecked(true);
+                    mHouseLight.setChecked(true);
+
                 } else {
                     mLightKit.setChecked(false);
                 }
@@ -742,6 +795,8 @@ public class SummaryActivity extends AppCompatActivity  implements View.OnClickL
                 Long user = dataSnapshot.getValue(Long.class);
                 if (user.toString().equals("1")) {
                     mLightLiv.setChecked(true);
+                    mHouseLight.setChecked(true);
+
                 } else {
                     mLightLiv.setChecked(false);
                 }
@@ -907,6 +962,7 @@ public class SummaryActivity extends AppCompatActivity  implements View.OnClickL
 
     }
 
+    @SuppressLint("NonConstantResourceId")
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
@@ -937,12 +993,13 @@ public class SummaryActivity extends AppCompatActivity  implements View.OnClickL
     void showTopLevelFragment(Fragment f1) {
 
         FragmentManager fragmentManager;
-        fragmentManager = SummaryActivity.this.getSupportFragmentManager();
+        fragmentManager = getSupportFragmentManager();
         FragmentTransaction ft = fragmentManager.beginTransaction();
-        ft.replace(R.id.fragment_host_summary, f1); // f1_container is your FrameLayoutcontainer
+        ft.replace(R.id.fragment_host_main, f1); // f1_container is your FrameLayoutcontainer
         ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
         ft.addToBackStack(null);
         ft.commit();
+
     }
     public void showPopupWindow(final View view, String mTExt) {
 

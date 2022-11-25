@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -22,6 +23,8 @@ import com.google.firebase.auth.FirebaseUser;
 public class RegisterActivity extends AppCompatActivity {
     TextInputLayout emailInput, passwordInput, passwordConfirmationInput;
     Button registerButton;
+    TextView goToLogin;
+
 
     public static final String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
     private ProgressDialog progressDialog;
@@ -45,6 +48,16 @@ public class RegisterActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 performAuthentication();
+            }
+        });
+
+        goToLogin = findViewById(R.id.GoToLogin);
+        goToLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(intent);
             }
         });
 

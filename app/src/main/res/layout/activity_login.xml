@@ -31,17 +31,19 @@
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/loginEmail"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:layout_marginBottom="15dp"
         android:hint="Enter Your Email"
+        app:boxStrokeWidth="0dp"
+        app:boxStrokeWidthFocused="0dp"
+        app:boxStrokeColor="#FFF"
         android:gravity="center"
         app:startIconDrawable="@drawable/ic_email"
         android:background="@drawable/ic_login_input">
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="250dp"
-            android:layout_height="match_parent"
-            android:layout_gravity="center"
-            />
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/transparent" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -49,19 +51,19 @@
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/loginPassword"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:layout_marginBottom="15dp"
         android:hint="Enter Password"
         app:boxStrokeWidth="0dp"
         app:boxStrokeWidthFocused="0dp"
         app:boxStrokeColor="#FFF"
+        android:gravity="center"
         app:startIconDrawable="@drawable/ic_password"
         android:background="@drawable/ic_login_input">
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="250dp"
-            android:layout_height="match_parent"
-            android:layout_gravity="center"
-            />
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/transparent" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -74,6 +76,7 @@
         android:layout_marginTop="12dp"
         android:layout_marginRight="15dp"
         android:background="@drawable/ic_login_button"
+        android:backgroundTint="@color/Title"
         android:textSize="18sp"
         android:text="Sign In"
         android:textColor="@color/colorWhite" />
@@ -88,7 +91,8 @@
         android:layout_height="wrap_content"
         android:text="Don't have an account?"
         android:textColor="@color/white"
-        android:textSize="13sp" />
+        android:textStyle="bold"
+        android:textSize="14sp" />
     <TextView
         android:id="@+id/GoToSignUp"
         android:layout_width="wrap_content"
@@ -97,7 +101,9 @@
         android:textColor="@color/Title"
         android:onClick="onClick"
         android:clickable="true"
-        android:textSize="13sp"/>
+        android:textStyle="bold"
+        android:layout_marginStart="8dp"
+        android:textSize="14sp"/>
 
 </LinearLayout>
 </LinearLayout>
